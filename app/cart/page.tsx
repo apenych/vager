@@ -13,6 +13,11 @@ export default function CartPage() {
   const [showOrderModal, setShowOrderModal] = useState(false)
   const [mounted, setMounted] = useState(false)
 
+  // SEO: устанавливаем title страницы
+  useEffect(() => {
+    document.title = 'Корзина — VAGER'
+  }, [])
+
   useEffect(() => {
     setMounted(true)
   }, [])

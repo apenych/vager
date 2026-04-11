@@ -4,6 +4,42 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import categoriesData from '@/data/categories.json'
 import productsData from '@/data/products.json'
+import type { Metadata, ResolvingMetadata } from 'next'
+
+const SITE_URL = 'https://vager.kz'
+
+// Генерация metadata для категории
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params
+  const categories = categoriesData as any[]
+  const products = productsData as any[]
+  const category = categories.find((c) => c.slug === slug)
+
+  if (!category) {
+    return {
+      title: 'Категория не найдена | VAGER',
+    }
+  }
+
+  const categoryProducts = products.filter((p) => p.category === category.id)
+
+  return {
+    title: `${category.name} — купить в Шымкенте | VAGER`,
+    description: `${category.name}: ${categoryProducts.length} товаров в наличии. Доставка по Шымкенту и Казахстану. 📞 +7 708 935 37 82`,
+    openGraph: {
+      title: `${category.name} — купить в Шымкенте | VAGER`,
+      description: `${category.name}: ${categoryProducts.length} товаров в наличии.`,
+      type: 'website',
+      url: `${SITE_URL}/catalog/${slug}`,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/catalog/${slug}`,
+    },
+  }
+}
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params

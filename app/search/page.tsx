@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Header from '@/components/Header'
 import Navigation from '@/components/Navigation'
@@ -24,6 +24,15 @@ function SearchResults() {
   const tab = searchParams.get('tab') || 'article'
   const brandFilter = searchParams.get('brand') || ''
   const modelFilter = searchParams.get('model') || ''
+
+  // SEO: устанавливаем title страницы при поиске
+  useEffect(() => {
+    if (query) {
+      document.title = `Поиск: "${query}" — VAGER`
+    } else {
+      document.title = 'Поиск автозапчастей — VAGER'
+    }
+  }, [query])
   
   const products = productsData as Product[]
   

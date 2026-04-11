@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import categoriesData from '@/data/categories.json'
+import type { Metadata } from 'next'
 
 interface Category {
   id: string
@@ -10,6 +11,16 @@ interface Category {
   slug: string
   product_count: number
   quantity: number
+}
+
+export const metadata: Metadata = {
+  title: 'Каталог автозапчастей — все категории | VAGER',
+  description: 'Полный каталог автозапчастей VAGER: двигатели, подвеска, тормозная система, электрика, масла, фильтры и многое другое. Более 11 000 товаров в наличии.',
+  openGraph: {
+    title: 'Каталог автозапчастей — все категории | VAGER',
+    description: 'Полный каталог автозапчастей VAGER: двигатели, подвеска, тормозная система, электрика, масла, фильтры и многое другое.',
+    type: 'website',
+  },
 }
 
 export default function CatalogPage() {

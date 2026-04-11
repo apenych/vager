@@ -11,6 +11,8 @@ import { useCart } from '@/context/CartContext'
 import categoriesData from '@/data/categories.json'
 import productsData from '@/data/products.json'
 
+const SITE_URL = 'https://vager.kz'
+
 interface Product {
   id: number
   article: string
@@ -41,6 +43,35 @@ export default function ProductPage() {
 
   const product = products.find(p => p.id === productId)
   const category = product ? categories.find(c => c.id === product.category) : null
+
+  // JSON-LD для товара
+  const productSchema = product ? {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: `${product.name} — артикул ${product.article}${product.brand ? `, бренд ${product.brand}` : ''}. Цена: ${product.price.toLocaleString()} ₸`,
+    image: `${SITE_URL}/logo.png`,
+    brand: product.brand ? {
+      '@type': 'Brand',
+      name: product.brand,
+    } : undefined,
+    sku: product.article,
+    mpn: product.article,
+    offers: {
+      '@type': 'Offer',
+      url: `${SITE_URL}/product/${product.id}`,
+      priceCurrency: 'KZT',
+      price: product.price,
+      availability: product.quantity > 0
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: {
+        '@type': 'Organization',
+        name: 'VAGER',
+      },
+    },
+  } : null
 
   useEffect(() => {
     if (!product) return
@@ -110,6 +141,14 @@ export default function ProductPage() {
 
   return (
     <main>
+      {/* JSON-LD Schema.org для товара */}
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
+
       <div className="sticky-top-bar">
         <Header />
         <Navigation />

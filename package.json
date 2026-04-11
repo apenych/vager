@@ -1,0 +1,22 @@
+{
+  "name": "auto_market",
+  "version": "1.0.0",
+  "description": "Интернет-магазин автозапчастей VAGER",
+  "scripts": {
+    "dev": "next dev",
+    "dev:mobile": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "latest"
+  }
+}

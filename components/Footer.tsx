@@ -16,16 +16,6 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h3 className="footer-title">ИНТЕРНЕТ-МАГАЗИН</h3>
-            <ul className="footer-links">
-              <li><a href="/catalog" className="footer-link">Поиск запчастей</a></li>
-              <li><a href="#" className="footer-link">Доставка</a></li>
-              <li><a href="#" className="footer-link">Оплата</a></li>
-              <li><a href="#" className="footer-link">Возврат и гарантия</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
             <h3 className="footer-title">КАТАЛОГ</h3>
             <ul className="footer-links">
               <li><a href="/catalog/1-4" className="footer-link">Двигатель</a></li>

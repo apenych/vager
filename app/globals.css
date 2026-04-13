@@ -319,6 +319,38 @@ button {
   border-bottom: 1px solid #2a2a2a;
 }
 
+.burger-social-links {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: none;
+}
+
+.burger-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #ff6600;
+  text-decoration: none;
+  border: 1px solid #ff6600;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.burger-social-link:hover {
+  background-color: #ff6600;
+  color: #fff;
+  opacity: 1;
+}
+
+.burger-social-link svg {
+  width: 22px;
+  height: 22px;
+}
+
 .burger-phone {
   color: #ff6600;
   text-decoration: none;
@@ -1399,6 +1431,10 @@ button {
   .footer-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
+  }
+
+  .footer-social-links {
+    justify-content: center !important;
   }
 
   /* Categories */

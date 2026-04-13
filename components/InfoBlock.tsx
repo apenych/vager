@@ -106,7 +106,7 @@ export default function InfoBlock() {
 
         {/* О компании */}
         <div id="about" className="about-section">
-          <h2 className="section-title">О компании VAGER</h2>
+          <h1 className="section-title">Автокомплекс VAGER — автозапчасти и автосервис в Шымкенте</h1>
           <p className="about-text">
             Автокомплекс <strong>VAGER</strong> — ваш надёжный партнёр в мире автомобилей с 2006 года.
             Компания была основана <strong>Куанышовым Ержаном Сапарбаевичем</strong> в Шымкенте
@@ -132,14 +132,14 @@ export default function InfoBlock() {
           </div>
 
           <div className="about-gallery">
-            <h3 className="gallery-title">Наш автосервис</h3>
+            <h2 className="gallery-title">Наш автосервис</h2>
             <p className="gallery-subtitle">Загляните к нам — посмотрите на наше оборудование и рабочие процессы</p>
             <div className="gallery-grid">
               {photos.map((photo, i) => (
                 <div key={i} className="gallery-item" onClick={() => setPreviewPhoto(photo)}>
                   <Image
                     src={`/photos/${photo}`}
-                    alt={`Фото автосервиса VAGER ${i + 1}`}
+                    alt={`Автосервис VAGER Шымкент — фото ${i + 1}: оборудование, запчасти, рабочие процессы`}
                     width={300}
                     height={200}
                     style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', cursor: 'pointer' }}
@@ -155,7 +155,7 @@ export default function InfoBlock() {
                 <button className="preview-close" onClick={() => setPreviewPhoto(null)} type="button">✕</button>
                 <Image
                   src={`/photos/${previewPhoto}`}
-                  alt="Просмотр фото"
+                  alt="Просмотр фото автосервиса VAGER Шымкент"
                   width={800}
                   height={600}
                   style={{ width: '100%', maxHeight: '80vh', objectFit: 'contain', borderRadius: '8px' }}

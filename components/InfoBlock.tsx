@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const photos = [
-  'IMG_1059.jpg', 'IMG_1060.jpg', 'IMG_1070.jpg', 'IMG_1073.jpg',
-  'IMG_1077.jpg', 'IMG_1116.jpg', 'IMG_1120.jpg', 'IMG_1126.jpg',
-  'IMG_1133.jpg', 'IMG_1142.jpg', 'IMG_1152.jpg', 'IMG_1166.jpg',
+  'IMG_1059.jpg', 'IMG_1060.jpg', 'IMG_1070.jpg', '5397931734344604013.jpg',
+  'IMG_1077.jpg', 'IMG_1093.jpg', 'IMG_1116.jpg', 'IMG_1120.jpg', 'IMG_1126.jpg',
+  '5397931734344604014.jpg', 'IMG_1142.jpg', 'IMG_1152.jpg', 'IMG_1166.jpg',
   'IMG_1176.jpg', 'IMG_1190.jpg', 'IMG_1198.jpg', 'IMG_1202.jpg',
-  'IMG_1222.jpg', 'IMG_1231.jpg', 'IMG_1233.jpg', 'IMG_1249.jpg',
+  '5397931734344604016.jpg', '5397931734344604017.jpg', 'IMG_1233.jpg', 'IMG_1249.jpg',
   'IMG_1253.jpg', 'IMG_1262.jpg', 'IMG_1280.jpg', 'IMG_1281.jpg',
 ]
 

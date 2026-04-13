@@ -39,6 +39,7 @@ const localBusinessSchema = {
   sameAs: [
     'https://www.google.com/maps/place/Vager/@42.3520698,69.5736122,17z/data=!3m1!4b1!4m6!3m5!1s0x38a91db86c9a40f9:0xe4d478902f0ee2f3!8m2!3d42.3520698!4d69.5761871!16s%2Fg%2F11mxnx4jqw',
     'https://www.instagram.com/vager_autoparts_shymkent',
+    'https://www.youtube.com/@YerzhanKuanyshov',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

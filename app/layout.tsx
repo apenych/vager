@@ -99,7 +99,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body>
-        <CartProvider suppressHydrationWarning>
+        <CartProvider>
           {children}
           <WhatsAppWidget />
         </CartProvider>

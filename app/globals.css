@@ -824,17 +824,32 @@ button {
 
 .footer-social-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   margin-top: 20px;
 }
 
 .footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   color: #ff6600;
   text-decoration: none;
-  padding: 8px 15px;
   border: 1px solid #ff6600;
-  border-radius: 5px;
-  font-size: 14px;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.footer-social-link:hover {
+  background-color: #ff6600;
+  color: #fff;
+  opacity: 1;
+}
+
+.footer-social-link svg {
+  width: 22px;
+  height: 22px;
 }
 
 .footer-copyright {
